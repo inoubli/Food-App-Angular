@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/home/category']" routerLinkActive="active">Add category</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/home/food']" routerLinkActive="active">Add food</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/home/meal']" routerLinkActive="active">Add meal</a>
+  </li>
+</ul>
+<div class="p-md-4">
+  <router-outlet></router-outlet>
+</div>
