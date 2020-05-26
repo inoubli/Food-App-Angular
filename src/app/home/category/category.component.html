@@ -2,11 +2,18 @@
   <fieldset>
     <div class="form-group">
       <label class="form-control-label" for="name">Name</label>
-      <input id="name" type="text" class="form-control" formControlName="name">>
+      <input id="name" type="text" class="form-control" formControlName="name">
     </div>
     <div class="form-group">
       <label class="form-control-label" for="legend">Legend</label>
-      <input id="legend" type="text" class="form-control" formControlName="legend">>
+      <input id="legend" type="text" class="form-control" formControlName="legend">
+    </div>
+    <div class="form-group">
+      <label class="form-control-label" for="meals">Meals</label>
+      <select id="meals" class="custom-select" formControlName="meals">
+        <option selected="">Open this select menu</option>
+        <option [value]="meal.id" *ngFor="let meal of meals">{{meal.name}}</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="exampleTextarea">Description</label>
