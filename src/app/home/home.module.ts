@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home.component';
 import { FoodComponent } from './food/food.component';
@@ -15,6 +15,6 @@ import { HomeRoutingModule } from './home-routing.module';
     CategoryComponent,
     MealComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, HomeRoutingModule, FormsModule, ReactiveFormsModule],
 })
 export class HomeModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Meal } from 'src/app/shared/models';
 import meals from 'src/app/core/mocks/mock-meals';
@@ -12,6 +12,10 @@ import meals from 'src/app/core/mocks/mock-meals';
 export class CategoryComponent implements OnInit {
   public categoryForm: FormGroup;
   public meals: Meal[] = [];
+
+  get name() {
+    return this.categoryForm.get('name');
+  }
 
   constructor() {}
 
@@ -30,7 +34,7 @@ export class CategoryComponent implements OnInit {
    */
   public buildForm() {
     this.categoryForm = new FormGroup({
-      name: new FormControl(),
+      name: new FormControl('', Validators.required),
       legend: new FormControl(),
       meals: new FormControl(),
       description: new FormControl(),
