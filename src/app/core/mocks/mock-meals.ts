@@ -1,6 +1,6 @@
 import { Meal } from 'src/app/shared/models';
 
-const meals: Meal[] = [
+export const MEALS: Meal[] = [
   {
     id: 1,
     name: 'Dinner',
@@ -26,5 +26,3 @@ const meals: Meal[] = [
     updated_at: '2020-05-23T23:39:31+00:00',
   },
 ];
-
-export default meals;
