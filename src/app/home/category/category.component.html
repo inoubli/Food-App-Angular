@@ -23,7 +23,7 @@
       <textarea class="form-control" id="exampleTextarea" rows="3" spellcheck="false"
         formControlName="description"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid" (click)="submit()">Submit</button>
     <button type="button" class="btn  btn-outline-primary ml-md-3">Cancel</button>
   </fieldset>
 </form>

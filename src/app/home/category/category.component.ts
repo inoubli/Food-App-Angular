@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Meal } from 'src/app/shared/models';
-import meals from 'src/app/core/mocks/mock-meals';
+import { MEALS } from 'src/app/core/mocks';
+import { CategoryService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-category',
@@ -17,7 +18,7 @@ export class CategoryComponent implements OnInit {
     return this.categoryForm.get('name');
   }
 
-  constructor() {}
+  constructor(private categroyService: CategoryService) {}
 
   ngOnInit(): void {
     this.initMeal();
@@ -27,7 +28,7 @@ export class CategoryComponent implements OnInit {
    * Initialize meals
    */
   public initMeal() {
-    this.meals = meals;
+    this.meals = MEALS;
   }
   /**
    * Build category form
@@ -38,6 +39,14 @@ export class CategoryComponent implements OnInit {
       legend: new FormControl(),
       meals: new FormControl(),
       description: new FormControl(),
+    });
+  }
+  /**
+   * Save new category
+   */
+  public submit() {
+    this.categroyService.create(this.categoryForm.value).subscribe((data) => {
+      alert(`Category ${data.name} created successfully`);
     });
   }
 }
