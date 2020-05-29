@@ -46,7 +46,7 @@ export class CategoryComponent implements OnInit {
    */
   public submit() {
     this.categroyService.create(this.categoryForm.value).subscribe((data) => {
-      alert(`Category ${data.name} created successfully`);
+      alert(`Category ${data.name} successfully created`);
     });
   }
 }
