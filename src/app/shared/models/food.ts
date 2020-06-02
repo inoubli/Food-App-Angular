@@ -3,9 +3,10 @@ export interface Food {
     name: string;
     description?: string;
     legend: string;
-    created_at: string;
-    updated_at: string;
-    selectedScore: number;
-    deselectedScore: number;
+    selected_score: number;
+    deselected_score: number;
+    image_url: string;
+    category_id: number;
+
   }
   
