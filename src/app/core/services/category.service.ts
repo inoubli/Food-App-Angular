@@ -17,6 +17,6 @@ export class CategoryService {
    * @param data
    */
   create(data: Category): Observable<Category> {
-    return this.apiService.post('categories/', data).pipe(map((data) => data));
+    return this.apiService.post('categories/', data,{}).pipe(map((data) => data));
   }
 }
