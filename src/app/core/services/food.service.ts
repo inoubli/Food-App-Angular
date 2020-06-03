@@ -39,16 +39,12 @@ export class FoodService {
     formData.append('json', JSON.stringify(json));
     console.log(formData); 
    }
-  //  formData.append('json',json);
-    //console.log(formData.get('file'));
+
     for (var pair of formData.entries()) {
       console.log(pair[0]); 
       console.log(pair[1]); 
     }
    return this.apiService.post('food/post', formData, options).pipe(map( (data) => data));
   //  return this.http.post('food/post', formData, options).pipe(map( (data) => data));
-   } 
-    
-    
-  
+   }   
 }
